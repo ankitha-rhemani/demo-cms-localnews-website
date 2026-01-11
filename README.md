@@ -58,7 +58,7 @@ Install XAMPP
 Start Apache from the XAMPP Control Panel  
 Clone or download this repository  
 Move the project folder into: xampp/htdocs/  
-Open your browser and navigate to: http://localhost/demo-cms-localnews-website/index.html  
+Open your browser and navigate to: http://localhost/demo-cms-localnews-website/html/index.html
   
   
 ### Notes
