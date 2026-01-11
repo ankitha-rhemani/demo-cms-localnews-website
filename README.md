@@ -29,12 +29,12 @@ Bootstrap
 JSON (for users and content storage)  
 
 ### Screenshots
-![Desktop - Home]("https://raw.githubusercontent.com/ankitha-rhemani/demo-cms-localnews-website/main/screenshots/desktop_home1.png")
-![Desktop - Content Panel]("https://raw.githubusercontent.com/ankitha-rhemani/demo-cms-localnews-website/main/screenshots/desktop_cp1.png")
-![Desktop - Signin Successful]("https://raw.githubusercontent.com/ankitha-rhemani/demo-cms-localnews-website/main/screenshots/desktop_signin2.png")
-![Desktop - Adding Content]("https://raw.githubusercontent.com/ankitha-rhemani/demo-cms-localnews-website/main/screenshots/desktop_cp2.png")
-![Mobile - Home]("https://raw.githubusercontent.com/ankitha-rhemani/demo-cms-localnews-website/main/screenshots/mobile_home1.png")
-![Mobile - Content Panel]("https://raw.githubusercontent.com/ankitha-rhemani/demo-cms-localnews-website/main/screenshots/mobile_cp1.png")
+![Desktop - Home](https://raw.githubusercontent.com/ankitha-rhemani/demo-cms-localnews-website/main/screenshots/desktop_home1.png)
+![Desktop - Content Panel](https://raw.githubusercontent.com/ankitha-rhemani/demo-cms-localnews-website/main/screenshots/desktop_cp1.png)
+![Desktop - Signin Successful](https://raw.githubusercontent.com/ankitha-rhemani/demo-cms-localnews-website/main/screenshots/desktop_signin2.png)
+![Desktop - Adding Content](https://raw.githubusercontent.com/ankitha-rhemani/demo-cms-localnews-website/main/screenshots/desktop_cp2.png)
+![Mobile - Home](https://raw.githubusercontent.com/ankitha-rhemani/demo-cms-localnews-website/main/screenshots/mobile_home1.png)
+![Mobile - Content Panel](https://raw.githubusercontent.com/ankitha-rhemani/demo-cms-localnews-website/main/screenshots/mobile_cp1.png)
 
 ### Project Status
 Academic project  
