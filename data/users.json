@@ -1,0 +1,30 @@
+[
+    {
+        "username": "anki_tha",
+        "name": "Ankitha",
+        "email": "dummyacc@yy.com",
+        "password": "1234",
+        "gender": "Female"
+    },
+    {
+        "username": "user1",
+        "name": "Demo User 1",
+        "email": "dummyacc@yy.com",
+        "password": "demo_pass1",
+        "gender": "Male"
+    },
+    {
+        "username": "user2",
+        "name": "Demo User 2",
+        "email": "dummyacc@yy.com",
+        "password": "demo_pass2",
+        "gender": "Male"
+    },
+    {
+        "username": "user3",
+        "name": "Demo User 3",
+        "email": "dummyacc@yy.com",
+        "password": "demo_pass3",
+        "gender": "Female"
+    }
+]

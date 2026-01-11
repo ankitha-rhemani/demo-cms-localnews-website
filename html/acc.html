@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<title>Bengaluru Express Local News</title>
+   <link rel="icon" href="../assets/favicon.png" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src = "https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+
+
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container-fluid">
+        
+      <a class="navbar-brand" href="#" style = "font-weight: bold; font-size:30px;"> <img src = "../assets/favicon.png" width = 30rem, height = 30rem> Bengaluru Express Local News </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="../html/index.html"><img src = "../assets/home.png" width = 30rem, height = 30rem> Home</a></li>
+         <!-- <li class="nav-item"><a class="nav-link" href="sign.html"><img src = "login.png" width = 30rem, height = 30rem> Login/Register</a></li>-->
+          
+          <li class="nav-item"><a class="nav-link" href="../html/publish.html"><img src = "../assets/publish.png" width = 30rem, height = 30rem>Publish news articles</a></li>
+
+           <li class="nav-item" id = "acc_log"><a class="nav-link" href="../html/acc.html"><img src = "../assets/user.png" width = 30rem, height = 30rem>My Account</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <nav aria-label="breadcrumb" class="py-2 " style="background-color: red;">
+    <div class="container">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="index.html" class="text-light">Home</a></li>
+        <li class="breadcrumb-item active text-light" aria-current="page">My Account</li>
+      </ol>
+    </div>
+  </nav>
+
+
+  <div class="container-fluid hero-section text-center py-5 pt-5 p-d m-d">
+    <h1 class="display-5 fw-bold" id = "heading">My Account</h1>
+    <p class="lead" id = "subheading">Manage your account, View and Manage your published articles!</p>
+    <button class="btn btn-outline-dark d-md-none"
+            type="button" 
+            data-bs-toggle="offcanvas" 
+            data-bs-target="#mobileUserPanel">
+      <i class="bi bi-person-circle"></i> My Details
+    </button>
+    <br>
+<hr>
+<br>
+
+    <div id = "myacc">
+       
+
+      <div id="userPanel" class="d-none d-md-block">
+      <h4>My Details</h4>
+      <p>
+        <span><strong>Name:</strong> <span class="userName"></span></span>
+      </p>
+      <p>
+        <span><strong>Username:</strong> <span class="userUsername"></span></span>
+      </p>
+      <p>
+        <span><strong>Email:</strong> <span class="userEmail"></span></span>
+      </p>
+      <button class="btn btn-light w-100 mt-3 logoutBtn">Logout</button>
+    </div>
+
+    <div id="myarticles">
+
+      <div class="container-fluid my-4">
+ 
+  <div id="articlesRow" class="row g-4">
+   
+  </div>
+  <div id="noArticles" class="text-center my-5 d-none">
+    <p class="text-muted">No articles yet. Start adding content!</p>
+    <a href="publish.html" class="btn btn-dark">Add Content</a>
+  </div>
+</div>
+    </div>
+
+  </div>
+
+
+  <div class="offcanvas offcanvas-end bg-danger text-white" tabindex="-1" id="mobileUserPanel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">My Details</h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+      <p>
+        <span><strong>Name:</strong> <span class="userName"></span></span>
+      </p>
+      <p>
+        <span><strong>Username:</strong> <span class="userUsername"></span></span>
+      </p>
+      <p>
+        <span><strong>Email:</strong> <span class="userEmail"></span></span>
+      </p>
+      <button class="btn btn-light w-100 mt-3 logoutBtn">Logout</button>
+    </div>
+  </div>
+
+    </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirm Delete</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to delete this article?
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button class="btn btn-danger" id="confirmDeleteBtn">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Edit Article Modal -->
+<div class="modal fade" id="editarticleModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>Edit Article</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="editArticleId">
+        <input type="text" id="editTitle" class="form-control mb-2">
+        <textarea id="editBody" class="form-control" rows="5"></textarea>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button class="btn btn-success" id="saveEditBtn">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Footer Section -->
+  <footer class="text-light pt-5 pb-3 m-10">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 mb-3">
+          
+          <div>
+            <strong>ADDRESS</strong>
+            <p class="mb-1">#314,1st Stage,1st Phase, 1st Cross<br>Karnataka, Banglore 540056, india</p>
+            <p class="mb-1">Phone: <a href="tel:+16035940249" class="text-light text-decoration-underline">+91 9850359429</a></p>
+            <div>
+              <select class="form-select form-select-sm bg-dark text-light w-auto mt-2" aria-label="Language select">
+                <option >select</option>
+                <option selected>English</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-3">
+  <strong>NEWS ARTICLES</strong>
+  <ul class="list-unstyled">
+    <li><a href="../html/publish.html" class="text-light text-decoration-none">Publish news articles</a></li>
+    <li><a href="../html/index.html" class="text-light text-decoration-none">View latest articles</a></li>
+        <li><a href="../html/acc.html" class="text-light text-decoration-none">View my posted articles</a></li>
+    <li><a href="../html/acc.html" class="text-light text-decoration-none">Our Content Management Panel</a></li>
+  </ul>
+</div>
+
+        <div class="col-md-3 mb-3">
+          <strong>QUICK LINK</strong>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-light text-decoration-none">About us</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Privacy Policy</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Terms & Conditions</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Publishing policies</a></li>
+
+        </div>
+
+        <div class="col-md-3 mb-3">
+          <strong>CONTACT US</strong>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-light text-decoration-none">   EMAIL : dummy@supportmail.com</a></li>
+            <li><a href="#" class="text-light text-decoration-none">   WhatsApp : +91 99999989</a></li>
+            <li><a href="#" class="text-light text-decoration-none">   linked in : dummyacc-linkedin.com</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">   Instagram : dummyacc</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="border-light">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+        <div class="mb-2 mb-md-0">
+          &copy; 2024-2027 Bengaluru Express Local News
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+
+ const savedUser = JSON.parse(localStorage.getItem("loggedInUser"));
+    if(!savedUser)
+    {
+     window.location.href = '../html/sign.html';
+
+    }
+
+    $(".userName").text(savedUser.name);
+  $(".userUsername").text(savedUser.username);
+  $(".userEmail").text(savedUser.email);
+
+
+function renderArticles(){
+    const uname = savedUser.username;
+    $("#articlesRow").empty();
+
+    $.getJSON("../data/content.json?_=" + new Date().getTime(), function(articles){
+
+       const userArticles = articles.filter(a => a.username === uname).reverse();
+
+        if(userArticles.length === 0){
+            $("#noArticles").removeClass("d-none");
+            return;
+        }
+        $("#noArticles").addClass("d-none");
+        
+
+        userArticles.forEach(article => {
+           let content = article.content.replace(/\n/g, "<br>");
+            $("#articlesRow").append(`
+              <div class="col-12 col-md-4 mb-4" id = "contentcard">
+  <div class="card p-3 h-100 d-flex flex-column">
+
+              <h3>${article.title}</h3>
+              <p class="flex-grow-1">${content}</p>
+              <p class="text-muted"><small>Posted by - ${article.author}</small></p>
+              <button class="btn btn-sm btn-outline-success me-2 edit-btn" data-id="${article.id}">Edit</button><br>
+                            <button class="btn btn-sm btn-outline-danger  me-2 delete-btn" data-id="${article.id}">Delete</button>
+              
+            </div>
+          </div>
+            `);
+        });
+    });
+}
+
+
+  renderArticles();
+
+
+  window.addEventListener("resize", function () {
+    if (window.innerWidth >= 768) { 
+      let offcanvas = document.querySelector('#mobileUserPanel');
+      let bsOffcanvas = bootstrap.Offcanvas.getInstance(offcanvas);
+      if (bsOffcanvas) {
+        bsOffcanvas.hide();
+      }
+    }
+  });
+
+$(".logoutBtn").click(function(){
+    localStorage.removeItem("loggedInUser");
+    window.location.href = "../html/index.html";
+  });
+
+  $(document).ready(function(){
+
+  let deleteArticleId = null;
+
+
+  $(document).on("click", ".delete-btn", function(){
+    deleteArticleId = $(this).data("id");
+    const modal = new bootstrap.Modal(document.getElementById('deleteModal'));
+    modal.show();
+  });
+
+
+  $("#deleteModal .btn-secondary").click(function(){
+    deleteArticleId = null;
+    $("#deleteModal").hide();
+    $(".modal-backdrop").remove();
+  });
+
+  $("#confirmDeleteBtn").click(function(){
+    if(!deleteArticleId) return;
+
+    $.post("../php/deleteArticle.php", 
+        { id: deleteArticleId, username: savedUser.username },
+        function(response){
+            if(response.status === "success"){
+                alert(response.message);
+                renderArticles(); 
+            } else {
+                alert(response.message);
+            }
+        },
+        "json"
+    );
+
+    $("#deleteModal").modal('hide');
+});
+
+  $(document).on("click", ".edit-btn", function(){
+    const id = $(this).data("id");
+
+    
+    $.getJSON("../data/content.json?_=" + new Date().getTime(), function(articles){
+      const article = articles.find(a => a.id === id);
+      if(article){
+        $("#editArticleId").val(article.id);
+        $("#editTitle").val(article.title);
+        $("#editBody").val(article.content);
+
+        const modal = new bootstrap.Modal(document.getElementById('editarticleModal'));
+        modal.show();
+      }
+    });
+  });
+
+
+  $("#editarticleModal .btn-secondary").click(function(){
+    $("#editarticleModal").hide();
+    $(".modal-backdrop").remove();
+  });
+
+ $("#saveEditBtn").click(function(){
+    const id = $("#editArticleId").val();
+    const title = $("#editTitle").val().trim();
+    const content = $("#editBody").val().trim();
+    const username = savedUser.username;
+
+    if(!title || !content){
+        alert("Both Title and Content are required!");
+        return;
+    }
+
+    $.post("../php/updateArticle.php",
+        { id, title, content, username },
+        function(res){
+            if(res.status === "success"){
+                alert(res.message);
+                renderArticles();
+            } else {
+                alert(res.message);
+            }
+            $("#editarticleModal").modal('hide');
+        },
+        "json"
+    );
+});
+});
+
+
+  </script>
+</body>
+</html>

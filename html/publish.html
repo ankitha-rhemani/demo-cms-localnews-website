@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+ <title>Bengaluru Express Local News</title>
+   <link rel="icon" href="../assets/favicon.png" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src = "https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container-fluid">
+        
+      <a class="navbar-brand" href="#" style = "font-weight: bold; font-size:30px;"> <img src = "../assets/favicon.png" width = 30rem, height = 30rem> Bengaluru Express Local News </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="../html/index.html"><img src = "../assets/home.png" width = 30rem, height = 30rem> Home</a></li>
+         <!-- <li class="nav-item"><a class="nav-link" href="sign.html"><img src = "login.png" width = 30rem, height = 30rem> Login/Register</a></li>-->
+          
+          <li class="nav-item"><a class="nav-link" href="../html/publish.html"><img src = "../assets/publish.png" width = 30rem, height = 30rem>Publish news articles</a></li>
+
+           <li class="nav-item" id = "acc_log"><a class="nav-link" href="../html/acc.html"><img src = "../assets/user.png" width = 30rem, height = 30rem>My Account</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <nav aria-label="breadcrumb" class="py-2 " style="background-color: red;">
+    <div class="container">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="../html/index.html" class="text-light">Home</a></li>
+        <li class="breadcrumb-item active text-light" aria-current="page">Publish news article</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Main Header Section -->
+  <div class="container-fluid hero-section text-center py-5 pt-5 p-d m-d">
+    <h1 class="display-5 fw-bold">Content Panel</h1>
+    <p class="lead"">Easily create, manage, and publish local news happening around you with our intuitive, scalable content management platform.</p>
+    <br>
+<hr>
+<br>
+
+<div id = "logindiv">
+       <p class = "lead" style = "font-weight: bold; color:red; font-size: 24px;"> Login to access the content Panel <br> or <br> Sign up with us for free! </p>
+      
+       <a href = "../html/sign.html" class = "btn" id = "taketologinbtn">Sign in / Sign up now!</a>
+
+</div>
+
+    <div id = "contentpanel">
+
+        <!-- Content Editor Section -->
+         <p class = "lead" id = "wel" style = "font-weight: bold; color:red;"></p>
+  <div class="container my-5 p-100">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="feature-box p-4 h-100">
+          <h3 class="mb-3">Content Editor</h3>
+          <form id="contentForm">
+            <div class="mb-3">
+              <label for="contentTitle" class="form-label">Title</label>
+              <input type="text" class="form-control" id="contentTitle" placeholder="Enter title">
+            </div>
+            <div class="mb-3">
+              <label for="contentBody" class="form-label">Body</label>
+              <textarea class="form-control" id="contentBody" rows="8" placeholder="Write your content here..."></textarea>
+              <small id="charCount" class="text-danger"></small>
+
+            </div>
+            <button type="button" class="btn btn-cms" id="previewBtn">Preview</button>
+           <button type = "button" class="btn btn-cms" id="addcontentBtn">Add Content</button>
+          </form>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="feature-box p-4 h-100">
+          <h3 class="mb-3">Live Preview</h3>
+          <div id="contentPreview" style = "background-color: rgb(249, 234, 160);">
+            <h4 class="text-secondary">Your content will appear here...</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>
+    </div>
+
+<div class="modal fade" id="publishModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirm Publish</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to publish this content?</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button class="btn btn-success" id="confirmPublish">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+   <!-- Footer Section -->
+  <footer class="text-light pt-5 pb-3 m-10">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 mb-3">
+          
+          <div>
+            <strong>ADDRESS</strong>
+            <p class="mb-1">#314,1st Stage,1st Phase, 1st Cross<br>Karnataka, Banglore 540056, india</p>
+            <p class="mb-1">Phone: <a href="tel:+16035940249" class="text-light text-decoration-underline">+91 9850359429</a></p>
+            <div>
+              <select class="form-select form-select-sm bg-dark text-light w-auto mt-2" aria-label="Language select">
+                <option >select</option>
+                <option selected>English</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-3">
+  <strong>NEWS ARTICLES</strong>
+  <ul class="list-unstyled">
+    <li><a href="../html/publish.html" class="text-light text-decoration-none">Publish news articles</a></li>
+    <li><a href="../html/index.html" class="text-light text-decoration-none">View latest articles</a></li>
+        <li><a href="../html/acc.html" class="text-light text-decoration-none">View my posted articles</a></li>
+    <li><a href="../html/acc.html" class="text-light text-decoration-none">Our Content Management Panel</a></li>
+  </ul>
+</div>
+
+        <div class="col-md-3 mb-3">
+          <strong>QUICK LINK</strong>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-light text-decoration-none">About us</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Privacy Policy</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Terms & Conditions</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Publishing policies</a></li>
+
+        </div>
+
+        <div class="col-md-3 mb-3">
+          <strong>CONTACT US</strong>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-light text-decoration-none">   EMAIL : dummy@supportmail.com</a></li>
+            <li><a href="#" class="text-light text-decoration-none">   WhatsApp : +91 99999989</a></li>
+            <li><a href="#" class="text-light text-decoration-none">   linked in : dummyacc-linkedin.com</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">   Instagram : dummyacc</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="border-light">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+        <div class="mb-2 mb-md-0">
+          &copy; 2024-2027 Bengaluru Express Local News
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    $(function(){
+    const savedUser = JSON.parse(localStorage.getItem("loggedInUser"));
+    if(savedUser){
+        $("#acc_log").html("<a class= nav-link href=../html/acc.html><img src = ../assets/user.png width = 30rem, height = 30rem>My Account</a>");
+         $("#contentpanel").show();
+         $("#logindiv").hide();
+        $("#wel").text("Welcome back, " + savedUser.name + "!");
+       
+    }
+    else{
+       $("#contentpanel").hide();
+        $("#logindiv").show();
+     $("#acc_log").html("<a class= nav-link href=../html/sign.html><img src = ../assets/user.png width = 30rem, height = 30rem>Sign in / Sign up</a>");
+
+    }
+});
+
+
+    $(function(){
+
+  $("#previewBtn").click(function(){
+    let title = $("#contentTitle").val().trim();
+    let body = $("#contentBody").val().trim();
+
+    if(title === "" && body === ""){
+      $("#contentPreview").html("<h4 class='text-danger'>Please enter some content first.</h4>");
+      return;
+    }
+    const user = JSON.parse(localStorage.getItem("loggedInUser"));
+const authorName = user ? user.name : "Unknown";
+     body = body.replace(/\n/g, "<br>");
+
+    let preview = `
+      <div class="card p-3">
+        <h3>${title}</h3>
+        <p>${body}</p>
+         <p class="text-muted mt-3"><small>Posted by - ${authorName}</small></p>
+      </div>
+    `;
+
+    $("#contentPreview").html(preview);
+  });
+
+});
+
+$(document).ready(function(){
+
+  $("#contentBody").on("input", function(){
+    const len = $(this).val().length;
+    if(len < 100){
+      $("#charCount").text((100 - len) + " more characters required");
+    } else {
+      $("#charCount").text("");
+    }
+  });
+
+ $("#addcontentBtn").click(function(){
+    const title = $("#contentTitle").val().trim();
+    const body = $("#contentBody").val().trim();
+
+    if(title === "" || body === ""){
+        alert("Please fill both Title and Body");
+        return;
+    }
+    if(body.length < 100){
+        alert(`Body must be at least 100 characters. ${100 - body.length} more required`);
+        return;
+    }
+
+    const modal = new bootstrap.Modal(document.getElementById('publishModal'));
+    modal.show();
+});
+
+$("#confirmPublish").click(function(){
+    const title = $("#contentTitle").val().trim();
+    const body = $("#contentBody").val().trim();
+    const user = JSON.parse(localStorage.getItem("loggedInUser"));
+    const authorName = user ? user.name : "Unknown";
+
+    const newArticle = {
+        id: Date.now(),   // unique id for edit/delete later
+        title: title,
+        content: body,
+        author: authorName,
+        username: user.username 
+    };
+
+    $.post("../php/addContent.php", 
+    {article: JSON.stringify(newArticle)}, 
+    
+    function(response){
+        if(response.status === "success"){
+            alert("Article published successfully!");
+            $("#publishModal").modal('hide');
+            $("#contentForm")[0].reset();
+            $("#contentPreview").html("");
+           
+        } else {
+            alert("Failed to publish: " + response.message);
+        }
+    }, "json");
+});
+});
+
+
+  </script>
+</body>
+</html>

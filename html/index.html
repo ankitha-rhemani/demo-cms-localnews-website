@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bengaluru Express Local News</title>
+   <link rel="icon" href="../assets/favicon.png" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src = "https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container-fluid">
+        
+      <a class="navbar-brand" href="#" style = "font-weight: bold; font-size:30px;"> <img src = "../assets/favicon.png" width = 30rem, height = 30rem> Bengaluru Express Local News </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="../html/index.html"><img src = "../assets/home.png" width = 30rem, height = 30rem> Home</a></li>
+         <!-- <li class="nav-item"><a class="nav-link" href="sign.html"><img src = "login.png" width = 30rem, height = 30rem> Login/Register</a></li>-->
+          
+          <li class="nav-item"><a class="nav-link" href="../html/publish.html"><img src = "../assets/publish.png" width = 30rem, height = 30rem>Publish news articles</a></li>
+
+           <li class="nav-item" id = "acc_log"><a class="nav-link" href="../html/acc.html"><img src = "../assets/user.png" width = 30rem, height = 30rem>My Account</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Header Section -->
+  <div class="container-fluid hero-section text-center py-5 pt-20 p-d m-d">
+    <h1 class="display-5 fw-bold">Welcome to Bengaluru Express – Tech & Local Updates</h1>
+<p class="lead">Post your own updates and explore the latest information, all in one place.</p>
+<br>
+<hr>
+<br>
+
+     <main>
+          <div class="container-fluid">
+            <h2 style = "text-decoration: underline; color:red">LATEST NEWS AROUND YOU</h2>
+            <br>
+    <div class="row" id="maindiv"></div>
+    
+  </div>
+       
+        
+         </main>
+         </div>
+         <br><hr><br>
+    
+
+  
+       <div id = "whyus">
+    <h3 class="mt-5">Why Bengaluru Express?</h3>
+    <p>Bengaluru Express is your local platform for sharing and reading quick text updates. 
+       No images, no files — just pure text-based information that is simple, fast, and clutter-free.</p>
+    <hr>  
+
+    <h3 class="mt-5">Simple Posting</h3>
+    <p>Anyone can write and share a post instantly. Just enter a title, add your text, and publish. 
+       Your update is immediately available for others to read.</p>
+    <hr>
+
+    <h3 class="mt-5">Focused Reading</h3>
+    <p>Stay up to date with local and tech updates, written in clear text format. 
+       Posts are easy to browse and quick to read without distractions.</p>
+    </div>
+
+  
+<br><hr><br>
+
+  <!-- Features Section -->
+ <div class="container my-5 pt-20 p-d m-d" id = "features">
+    <div class="row text-center">
+      <div class="col-md-6 mb-4">
+      
+      <div class="feature-box p-4 h-100 border rounded shadow-sm bg-light">
+        <h3 class="mb-3">Easy Text Posting</h3>
+        <ul class="list-unstyled">
+          <li>♦️ Add news or updates with a simple form</li>
+          <li>♦️ Write in plain text format</li>
+          <li>♦️ Instantly share your thoughts</li>
+        </ul>
+      </div>
+      </div>
+   
+
+  <div class="col-md-6 mb-4">
+      <div class="feature-box p-4 h-100 border rounded shadow-sm bg-light">
+        <h3 class="mb-3">Organized Viewing</h3>
+        <ul class="list-unstyled">
+          <li>♦️ Browse all posts in one place</li>
+          <li>♦️ Stay updated with latest text posts</li>
+        </ul>
+      </div>
+      </div>
+    
+
+  <div class="col-md-6 mb-4">
+      <div class="feature-box p-4 h-100 border rounded shadow-sm bg-light">
+        <h3 class="mb-3">Community Connection</h3>
+        <ul class="list-unstyled">
+          <li>♦️ Share knowledge with others</li>
+          <li>♦️ Build a network of active readers</li>
+        </ul>
+      </div>
+      </div>
+   
+
+  <div class="col-md-6 mb-4">
+      <div class="feature-box p-4 h-100 border rounded shadow-sm bg-light">
+        <h3 class="mb-3">Reliable & Fast</h3>
+        <ul class="list-unstyled">
+          <li>♦️ Quick access to all posts</li>
+          <li>♦️ Lightweight, text-only platform</li>
+          <li>♦️ Always available when you need</li>
+        </ul>
+      </div>
+      </div>
+   
+
+   <div class="col-md-6 mb-4">
+      <div class="feature-box p-4 h-100 border rounded shadow-sm bg-light">
+        <h3 class="mb-3">Engagement Insights</h3>
+        <ul class="list-unstyled">
+          <li>♦️ See most recent posts</li>
+          <li>♦️ See local insights near you</li>
+          <li>♦️ Encourage meaningful interaction</li>
+        </ul>
+        </div>
+      </div>
+  
+
+   <div class="col-md-6 mb-4">
+      <div class="feature-box p-4 h-100 border rounded shadow-sm bg-light">
+        <h3 class="mb-3">Multi-Device Access</h3>
+        <ul class="list-unstyled">
+          <li>♦️ Works on desktop, tablet, and mobile</li>
+          <li>♦️ Post and view anytime, anywhere</li>
+          <li>♦️ Responsive design for all screens</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+  <!-- Footer Section -->
+  <footer class="text-light pt-5 pb-3 m-10">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 mb-3">
+          
+          <div>
+            <strong>ADDRESS</strong>
+            <p class="mb-1">#314,1st Stage,1st Phase, 1st Cross<br>Karnataka, Banglore 540056, india</p>
+            <p class="mb-1">Phone: <a href="tel:+16035940249" class="text-light text-decoration-underline">+91 9850359429</a></p>
+            <div>
+              <select class="form-select form-select-sm bg-dark text-light w-auto mt-2" aria-label="Language select">
+                <option >select</option>
+                <option selected>English</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-3">
+  <strong>NEWS ARTICLES</strong>
+  <ul class="list-unstyled">
+    <li><a href="../html/publish.html" class="text-light text-decoration-none">Publish news articles</a></li>
+    <li><a href="#" class="text-light text-decoration-none">View latest articles</a></li>
+        <li><a href="../html/acc.html" class="text-light text-decoration-none">View my posted articles</a></li>
+    <li><a href="../html/acc.html" class="text-light text-decoration-none">Our Content Management Panel</a></li>
+  </ul>
+</div>
+
+        <div class="col-md-3 mb-3">
+          <strong>QUICK LINK</strong>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-light text-decoration-none">About us</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Privacy Policy</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Terms & Conditions</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Publishing policies</a></li>
+
+        </div>
+
+        <div class="col-md-3 mb-3">
+          <strong>CONTACT US</strong>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-light text-decoration-none">   EMAIL : dummy@supportmail.com</a></li>
+            <li><a href="#" class="text-light text-decoration-none">   WhatsApp : +91 99999989</a></li>
+            <li><a href="#" class="text-light text-decoration-none">   linked in : dummyacc-linkedin.com</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">   Instagram : dummyacc</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="border-light">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+        <div class="mb-2 mb-md-0">
+          &copy; 2024-2027 Bengaluru Express Local News
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+ <script>
+
+  $(function(){
+    const savedUser = JSON.parse(localStorage.getItem("loggedInUser"));
+    if(savedUser){
+        $("#acc_log").html("<a class= nav-link href=../html/acc.html><img src = ../assets/user.png width = 30rem, height = 30rem>My Account</a>");
+       
+    }
+    else{
+     $("#acc_log").html("<a class= nav-link href=../html/sign.html><img src = ../assets/user.png width = 30rem, height = 30rem>Sign in / Sign up</a>");
+
+    }
+});
+
+  $(document).ready(function() {
+
+  function renderArticles() {
+    const articlesRow = $("#maindiv");
+    articlesRow.empty();
+
+    $.getJSON("../data/content.json?_=" + new Date().getTime(), function(data){
+      data.reverse();
+      data.forEach(article => {
+         let content = article.content.replace(/\n/g, "<br>");
+        const card = `
+    <div class="col-12 col-md-4 mb-4" id = "contentcard">
+  <div class="card p-3 h-100 d-flex flex-column">
+
+              <h3>${article.title}</h3>
+              <p class="flex-grow-1">${content}</p>
+              <p class="text-muted"><small>Posted by - ${article.author}</small></p>
+            </div>
+          </div>
+        `;
+        articlesRow.append(card);
+      });
+    }).fail(function(){
+      console.error("Failed to load content.json. Check path or JSON format.");
+    });
+  }
+
+  renderArticles();
+});
+</script>
+</body>
+</html>

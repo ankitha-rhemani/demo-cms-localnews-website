@@ -1,0 +1,221 @@
+body {
+  background:white;
+  color: black;
+  padding-top: 70px;
+}
+
+.navbar {
+  box-shadow: 0 2px 8px rgba(22, 22, 22, 0.08);
+  background-color: red;
+}
+
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+.breadcrumb {
+  border-radius: 0.25rem;
+ 
+}
+.breadcrumb .breadcrumb-item {
+  color: #fff !important;
+}
+
+.p-d {
+  padding-bottom: 40px !important;
+}
+
+.m-d {
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+#signinfo{
+  display: flex;
+}
+
+.hero-section {
+  background: white;
+  color: black;
+}
+
+.btn-cms {
+  background: black;
+  color: #fff;
+  border-radius: 30px;
+  font-weight: bold;
+  border: none;
+}
+.btn-cms:hover {
+  background: red;
+  color: #fff;
+}
+
+
+.sign{
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+#aboutstory{
+  text-align: center;
+  font-weight: 300;
+  padding: 30px;
+  margin: 50px;
+}
+
+#outerdiv1 , #outerdiv2{
+  border: 2px solid grey;
+  padding: 70px;
+  margin: 50px;
+  display: flex;
+  gap:10px;
+}
+
+.inerdiv1 , .inerdiv2{
+  border: 2px solid grey;
+  padding: 50px;
+  box-shadow: 5px 10px #888888;
+  flex :2;
+
+}
+
+/* Feature Boxes */
+.feature-box {
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(22, 22, 22, 0.07);
+  color: black;
+}
+.feature-box h3 {
+  color: black;
+}
+.feature-box ul li {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid #23233a;
+  background-color: red;
+}
+.footer-link {
+ 
+  text-decoration: none;
+}
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+
+#contentcard:hover {
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 768px) {
+  #show {
+    flex-direction: column;
+  }
+}
+
+.card {
+            border: 4px solid red;
+            padding: 15px;
+            
+            border-radius: 8px;
+            background: wheat;
+            
+            color:black;
+}
+        .card h3 {
+            margin-top: 0;
+        }
+
+        hr{
+            height: 2px;
+            background-color: red;
+        }
+
+#whyus{
+  background-color: white; 
+  border-radius: 2rem; 
+  color:red; 
+  margin:20px; padding:10px; border:2px solid black; 
+  text-align: center;
+}
+
+#userdetails{
+  background-color: white;
+}
+
+
+#userSidebar {
+  position: sticky;      
+  top: 20px;             
+  max-height: calc(100vh - 40px); 
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+}
+
+
+@media (max-width: 768px) {
+  #userSidebar {
+    position: static;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+#taketologinbtn{
+  background-color: black;
+  color:white;
+  padding:10px;
+  margin-top:10px;
+}
+
+ #userPanel h4 {
+      border-bottom: 1px solid rgba(255,255,255,0.4);
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+     #userPanel {
+      flex: 0 0 20%;
+      background-color: red; 
+      color: white;
+      padding: 20px;
+    }
+
+    #myacc{
+      display: flex;
+      min-height: 100vh;
+       flex-wrap: wrap; 
+    }
+ 
+    @media (max-width: 768px) {
+      #userPanel {
+        display: none;
+      }
+      #myarticles {
+    width: 100%;
+    padding: 0 10px; 
+  }
+    }
+
+    #myarticles {
+      flex: 1;
+      padding: 20px;
+    }
+
+#mobileUserPanel {
+  background-color: red !important;  
+  color: white; 
+}
+
+
