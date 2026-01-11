@@ -52,3 +52,7 @@ No live deployment
 Authentication and storage are simplified for learning purposes  
 JSON files included are sample / sanitized data  
 No real user data is stored  
+
+## Content Disclaimer
+The news content included in this repository consists of AI-generated summaries used solely for demonstration purposes in an academic project. The content does not represent real-time reporting or original journalism.  
+User credentials and content included are sample data used to showcase CMS functionality.
