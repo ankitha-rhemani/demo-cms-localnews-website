@@ -46,7 +46,22 @@ Understanding CMS-style content flow
 Team collaboration and academic project structure  
 Responsive web design using Bootstrap  
 
-#### Notes
+## How to Run Locally
+This project uses PHP, so it must be run through a local server environment.
+
+#### Requirements
+XAMPP  
+Web browser 
+
+#### Steps
+Install XAMPP  
+Start Apache from the XAMPP Control Panel  
+Clone or download this repository  
+Move the project folder into: xampp/htdocs/  
+Open your browser and navigate to: http://localhost/demo-cms-localnews-website/index.html  
+  
+  
+### Notes
 No database or real backend (intentional for academic scope)  
 No live deployment  
 Authentication and storage are simplified for learning purposes  
